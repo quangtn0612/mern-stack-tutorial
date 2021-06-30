@@ -33,10 +33,11 @@ class CreateUser extends Component {
           <div className="form-group">
             <label>Username: </label>
             <input
-              type="text" required
+              type="text" 
               className="form-control"
               value={this.state.username}
               onChange={this.onChangeUsername}
+              required
             />
           </div>
           <div className="form-group">

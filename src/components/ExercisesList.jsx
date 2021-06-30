@@ -6,7 +6,7 @@ const Exercise = props => (
     <td>{props.exercise.username}</td>
     <td>{props.exercise.description}</td>
     <td>{props.exercise.duration}</td>
-    <td>{props.exercise.date.substring(0, 10)}</td>
+    <td>{props.exercise.date.substring(0,10)}</td>
     <td>
       <button className="btn btn-secondary"><Link to={"/edit/" + props.exercise._id} style={{ color: "white" }}>Edit</Link></button> | <button className="btn btn-danger" onClick={() => { props.deleteExercise(props.exercise._id) }}>Delete</button>
     </td>

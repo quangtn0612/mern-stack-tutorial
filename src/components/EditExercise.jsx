@@ -25,8 +25,9 @@ class EditExercise extends Component {
           username: res.data.username,
           description: res.data.description,
           duration: res.data.duration,
-          date: new Date(res.data.date),
+          date: new Date(),
         })
+        console.log(res.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -58,7 +59,7 @@ class EditExercise extends Component {
       username: this.state.username,
       description: this.state.description,
       duration: this.state.duration,
-      date: this.state.date
+      // date: this.state.date
     }
     console.log(exercise);
     axios.post('http://localhost:8001/exercises/update/' + this.props.match.params.id, exercise)
@@ -73,11 +74,12 @@ class EditExercise extends Component {
           <div className="form-group">
             <label>Username: </label>
             <select
-              required
               className="form-control"
               value={this.state.username}
-              onChange={this.onChangeUsername} >
-              {
+              onChange={this.onChangeUsername} 
+              required
+            >
+              { 
                 this.state.users.map(function (user) {
                   return <option key={user} value={user}>{user}</option>;
                 })
@@ -106,6 +108,7 @@ class EditExercise extends Component {
             <label>Date: </label>
             <div>
               <DatePicker
+              className="form-control"
                 selected={this.state.date}
                 onChange={this.onChangeDate}
               />
