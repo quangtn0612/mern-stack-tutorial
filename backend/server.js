@@ -24,6 +24,8 @@ const exercisesRouter = require('./routes/exercises');
 
 const usersRouter = require('./routes/users');
 
+app.get("/",(req,res)=>res.status(200).send("HELLO WORLD!"));
+
 app.use('/exercises', exercisesRouter);
 
 app.use('/users', usersRouter);
